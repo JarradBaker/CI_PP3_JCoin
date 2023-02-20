@@ -6,14 +6,15 @@ scopes = [
     'https://www.googleapis.com/auth/drive'
 ]
 
-creds = ServiceAccountCredentials.from_json_keyfile_name("/workspace/CI_PP3_JCoin/secret_key/secret_key.json", scopes=scopes)
+creds = ServiceAccountCredentials.from_json_keyfile_name(
+    "/workspace/CI_PP3_JCoin/secret_key/secret_key.json", scopes=scopes)
 
 
 def show_main_menu():
-    print("  _________      ______    ________    _______    ___      _  ")
-    print(" |___   ___|    /  ____|  |  ____  |  |__   __|  |   \    | | ")
-    print("     | |       |  /       | |    | |     | |     | |\ \   | | ")
-    print("     | |       | |        | |    | |     | |     | | \ \  | | ")
-    print("     | |       | |        | |    | |     | |     | |  \ \ | | ")
-    print("  ___| |       | \_____   | |____| |   __| |__   | |   \ \| | ")
-    print(" |_____|       \ ______|  |________|  |_______|  |_|    \___| ")
+    print(" _________     _______    ________    _______    _______   __ ")
+    print("|___   ___|   |  _____|  |  ____  |  |__   __|  |   _   | |  |")
+    print("    | |       | |        | |    | |     | |     |  | |  | |  |")
+    print("    | |       | |        | |    | |     | |     |  | |  | |  |")
+    print("    | |       | |        | |    | |     | |     |  | |  | |  |")
+    print(" ___| |       | |_____   | |____| |   __| |__   |  | |  |_|  |")
+    print("|_____|       |_______|  |________|  |_______|  |__| |_______|")
