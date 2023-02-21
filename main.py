@@ -52,4 +52,31 @@ def show_start_menu():
     print("|_____|       |_______|  |________|  |_______|  |__| |_______|")
 
 
+def show_welcome_menu():
+    print("Please select one of the options below:")
+    print("1. Sign in to your wallet")
+    print("2. Create a new wallet")
+    print("3. Exit the program")
+    user_choice = input("Please enter 1, 2, or 3, and press enter: ")
+
+    if (user_choice == "1"):
+        print("Input your login details:")
+        input_user = input("Please enter your username: ")
+        input_pass = input("Please enter your password: ")
+        # If user is in google sheet check column + 1 if password matches
+        # elif user isn't in google sheet, give error message
+    elif (user_choice == "2"):
+        new_user = input("Please choose a username: ")
+        new_pass = input("Please choose a password: ")
+        # Find the next available username cell, and enter the user
+        # plus enter the pass in the user column + 1
+    elif (user_choice == "3"):
+        # Do this
+        SystemExit(0)
+    else:
+        print("Please enter one of the options")
+        show_welcome_menu()
+
+
 show_start_menu()
+show_welcome_menu()
