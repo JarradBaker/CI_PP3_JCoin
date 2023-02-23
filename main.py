@@ -16,6 +16,11 @@ sheet = workbook.sheet1
 
 # READING FROM THE SPREADSHEET
 
+# Searching for a value in a cell in the specified column
+# and return the row number
+# cell = sheet.find("jarrad", in_column=1).row
+# print(cell)
+
 # ITERATE THROUGH GIVEN CELLS
 # for cell in sheet.range('A2:A6'):
 #     print(cell.value)
@@ -50,6 +55,7 @@ def show_start_menu():
     print("    | |       | |        | |    | |     | |     |  | |  | |  |")
     print(" ___| |       | |_____   | |____| |   __| |__   |  | |  |_|  |")
     print("|_____|       |_______|  |________|  |_______|  |__| |_______|")
+    print("                                                              ")
 
 
 def show_welcome_menu():
