@@ -41,7 +41,7 @@ sheet = workbook.sheet1
 # sheet.update_acell('A2', 'Connor')
 
 # UPDATE A GIVEN CELL BY CELL COORDINATES (row, col, value)
-# sheet.update_cell(3, 2, 10) 
+# sheet.update_cell(3, 2, 10)
 
 # UPDATE A RANGE OF CELLS
 # sheet.update('A2:C2', [['alex', 'alex123', 10000]])
@@ -69,6 +69,17 @@ def show_welcome_menu():
         print("Input your login details:")
         input_user = input("Please enter your username: ")
         input_pass = input("Please enter your password: ")
+        if (sheet.find(input_user)):
+            row_ID = sheet.find(input_user, in_column=1).row
+            found_pass = sheet.cell(row_ID, 2).value
+            print("Found wallet, checking password")
+            if (input_pass == found_pass):
+                print("Password Matches, logging in")
+            else:
+                print("Incorrect password, try again")
+        else:
+            print("User doesn't exist, please create a wallet")
+
         # If user is in google sheet check column + 1 if password matches
         # elif user isn't in google sheet, give error message
     elif (user_choice == "2"):
