@@ -13,6 +13,7 @@ file = gspread.authorize(creds)
 workbook = file.open("blockchain")
 sheet = workbook.sheet1
 
+row_ID = 0
 
 # READING FROM THE SPREADSHEET
 
@@ -70,11 +71,15 @@ def show_welcome_menu():
         input_user = input("Please enter your username: ")
         input_pass = input("Please enter your password: ")
         if (sheet.find(input_user)):
+            # gets the row number of the found username
+            # for checking the corresponding password
             row_ID = sheet.find(input_user, in_column=1).row
+            # finds the corresponding password
             found_pass = sheet.cell(row_ID, 2).value
             print("Found wallet, checking password")
             if (input_pass == found_pass):
                 print("Password Matches, logging in")
+                show_wallet_menu(row_ID)
             else:
                 print("Incorrect password, try again")
         else:
@@ -95,5 +100,11 @@ def show_welcome_menu():
         show_welcome_menu()
 
 
+def show_wallet_menu(row_ID):
+    wallet_user = sheet.cell(row_ID, 1).value
+    wallet_balance = sheet.cell(row_ID, 3).value
+    print("Welcome", wallet_user, "Your balance is:", wallet_balance)
+
+ 
 show_start_menu()
 show_welcome_menu()
