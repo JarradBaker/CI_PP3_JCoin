@@ -14,6 +14,7 @@ workbook = file.open("blockchain")
 sheet = workbook.sheet1
 
 row_ID = 0
+incorrect_attempts = 0
 
 # READING FROM THE SPREADSHEET
 
@@ -81,7 +82,13 @@ def show_welcome_menu():
                 print("Password Matches, logging in")
                 show_wallet_menu(row_ID)
             else:
-                print("Incorrect password, try again")
+                if (global incorrect_attempts >= 2):
+                    print("Too many incorrect guesses, exiting")
+                    SystemExit(0)
+                else:
+                    print("Incorrect password, try again")
+                    incorrect_attempts += 1
+                    show_welcome_menu()
         else:
             print("User doesn't exist, please create a wallet")
 
@@ -105,6 +112,6 @@ def show_wallet_menu(row_ID):
     wallet_balance = sheet.cell(row_ID, 3).value
     print("Welcome", wallet_user, "Your balance is:", wallet_balance)
 
- 
+
 show_start_menu()
 show_welcome_menu()
