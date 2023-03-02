@@ -59,8 +59,10 @@ def show_start_menu():
     print("|_____|       |_______|  |________|  |_______|  |__| |_______|")
     print("                                                              ")
 
+    show_welcome_menu(0)
 
-def show_welcome_menu():
+
+def show_welcome_menu(incorrect_attempts):
     print("Please select one of the options below:")
     print("1. Sign in to your wallet")
     print("2. Create a new wallet")
@@ -82,13 +84,13 @@ def show_welcome_menu():
                 print("Password Matches, logging in")
                 show_wallet_menu(row_ID)
             else:
-                if (global incorrect_attempts >= 2):
-                    print("Too many incorrect guesses, exiting")
+                if (incorrect_attempts >= 2):
+                    print("\n Too many incorrect guesses, exiting \n")
                     SystemExit(0)
                 else:
-                    print("Incorrect password, try again")
+                    print("\n Incorrect password, try again \n")
                     incorrect_attempts += 1
-                    show_welcome_menu()
+                    show_welcome_menu(incorrect_attempts)
         else:
             print("User doesn't exist, please create a wallet")
 
@@ -114,4 +116,3 @@ def show_wallet_menu(row_ID):
 
 
 show_start_menu()
-show_welcome_menu()
