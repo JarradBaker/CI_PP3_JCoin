@@ -86,6 +86,15 @@ def show_welcome_menu(incorrect_attempts):
     elif (user_choice == "2"):
         new_user = input("Please choose a username: ")
         new_pass = input("Please choose a password: ")
+        if gsheets.sheet.find(new_user):
+            print("\nUser already exists. Please log in")
+            show_welcome_menu(incorrect_attempts)
+        else:
+            next_empty_cell = gsheets.next_empty_row()
+            gsheets.sheet.update_cell(next_empty_cell, 1, new_user)
+            gsheets.sheet.update_cell(next_empty_cell, 2, new_pass)
+            gsheets.sheet.update_cell(next_empty_cell, 3, 10000)
+            show_wallet_menu(next_empty_cell)
         # Find the next available username cell, and enter the user
         # plus enter the pass in the user column + 1
     elif (user_choice == "3"):
