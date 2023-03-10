@@ -1,4 +1,5 @@
 import gsheets as gsheets
+import blockchain
 
 row_ID = 0
 incorrect_attempts = 0
@@ -106,9 +107,29 @@ def show_welcome_menu(incorrect_attempts):
 
 
 def show_wallet_menu(row_ID):
-    wallet_user = gsheets.sheet.cell(row_ID, 1).value
-    wallet_balance = gsheets.sheet.cell(row_ID, 3).value
-    print("Welcome", wallet_user, "Your balance is:", wallet_balance)
+    blockchain.check_balance(row_ID)
+    print("\nWhat would you like to do?")
+    print("\n1. Check your balance")
+    print("\n2. Send coins to another user")
+    print("\n3. Mine a block")
+    print("\n4. Delete your wallet")
+    print("\n5. Exit the program")
+    user_choice = input("\nPlease enter 1, 2, 3, 4, or 5 and press enter: ")
+
+    if (user_choice == 1):
+        blockchain.check_balance(row_ID)
+        show_wallet_menu(row_ID)
+    # elif (user_choice == 2):
+        # Do this
+    # elif (user_choice == 3):
+        # Do this
+    # elif (user_choice == 4):
+        # Do this
+    # elif (user_choice == 5):
+        # Do this
+    else:
+        print("\nPlease enter one of the options")
+        show_wallet_menu(row_ID)
 
 
 show_start_menu()
