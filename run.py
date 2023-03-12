@@ -116,11 +116,17 @@ def show_wallet_menu(row_ID):
     print("\n5. Exit the program")
     user_choice = input("\nPlease enter 1, 2, 3, 4, or 5 and press enter: ")
 
-    if (user_choice == 1):
+    if (user_choice == "1"):
         blockchain.check_balance(row_ID)
         show_wallet_menu(row_ID)
-    # elif (user_choice == 2):
-        # Do this
+    elif (user_choice == "2"):
+        sender_row_ID = row_ID
+        receiver_wallet = input("Please choose a user to send coins to: ")
+        amount_to_send = int(input("Please choose an amount of coins: "))
+        # Check if receiver_wallet is null
+        receiver_row_ID = gsheets.sheet.find(receiver_wallet, in_column=1).row
+        blockchain.send_coins(sender_row_ID, receiver_row_ID, amount_to_send)
+        show_wallet_menu(row_ID)
     # elif (user_choice == 3):
         # Do this
     # elif (user_choice == 4):

@@ -3,9 +3,18 @@ import gsheets
 
 def send_coins(sending_user, receiving_user, amount):
     # sending_user wallet balance - amount
-    sending_user.value -= amount
-    # receiving_user wallet balance + amount
-    receiving_user.value += amount
+    sender_balance = int(gsheets.sheet.cell(sending_user, 3).value)
+    receiver_balance = int(gsheets.sheet.cell(receiving_user, 3).value)
+
+    if (sender_balance - amount < 0):
+        # Exit the function and output error not enough balance
+        print("\nBalance is lower than amount to send ")
+        print("\nPlease send a smaller amount")
+        return
+    else:
+        gsheets.sheet.update_cell(sending_user, 3, sender_balance - amount)
+        gsheets.sheet.update_cell(receiving_user, 3, receiver_balance + amount)
+        print("\nCoins have been sent successfully")
     # creates a new block
 
 
