@@ -91,7 +91,7 @@ def show_welcome_menu(incorrect_attempts):
             print("\nUser already exists. Please log in")
             show_welcome_menu(incorrect_attempts)
         else:
-            next_empty_cell = gsheets.next_empty_row()
+            next_empty_cell = gsheets.next_empty_row_wallets()
             gsheets.sheet.update_cell(next_empty_cell, 1, new_user)
             gsheets.sheet.update_cell(next_empty_cell, 2, new_pass)
             gsheets.sheet.update_cell(next_empty_cell, 3, 10000)
@@ -129,6 +129,15 @@ def show_wallet_menu(row_ID):
                 receiver_wallet, in_column=1).row
             blockchain.send_coins(
                 sender_row_ID, receiver_row_ID, amount_to_send)
+            next_empty_cell = gsheets.next_empty_row_transactions()
+            # Updating the transactions sheet
+            sender_wallet = gsheets.sheet.acell('A'+str(row_ID)).value
+            gsheets.transactions.update_cell(
+                next_empty_cell, 1, sender_wallet)
+            gsheets.transactions.update_cell(
+                next_empty_cell, 2, receiver_wallet)
+            gsheets.transactions.update_cell(
+                next_empty_cell, 3, amount_to_send)
             show_wallet_menu(row_ID)
         else:
             print("\nCannot find reciever wallet")

@@ -22,3 +22,6 @@ def check_balance(row_ID):
     wallet_user = gsheets.sheet.cell(row_ID, 1).value
     wallet_balance = gsheets.sheet.cell(row_ID, 3).value
     print("\nWelcome", wallet_user, "Your balance is:", wallet_balance)
+
+
+# def mine_block()

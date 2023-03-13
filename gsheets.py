@@ -11,10 +11,18 @@ creds = ServiceAccountCredentials.from_json_keyfile_name(
 
 file = gspread.authorize(creds)
 workbook = file.open("blockchain")
-sheet = workbook.sheet1
+# sheet = workbook.sheet1
+sheet = workbook.worksheet("wallets")
+transactions = workbook.worksheet("transactions")
 
 
-def next_empty_row():
+def next_empty_row_wallets():
     for i in range(1, 1000):
         if not sheet.cell(i, 1).value:
+            return i
+
+
+def next_empty_row_transactions():
+    for i in range(1, 1000):
+        if not transactions.cell(i, 1).value:
             return i
