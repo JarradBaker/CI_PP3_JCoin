@@ -124,15 +124,21 @@ def show_wallet_menu(row_ID):
         receiver_wallet = input("Please choose a user to send coins to: ")
         amount_to_send = int(input("Please choose an amount of coins: "))
         # Check if receiver_wallet is null
-        receiver_row_ID = gsheets.sheet.find(receiver_wallet, in_column=1).row
-        blockchain.send_coins(sender_row_ID, receiver_row_ID, amount_to_send)
-        show_wallet_menu(row_ID)
+        if (gsheets.sheet.find(receiver_wallet)):
+            receiver_row_ID = gsheets.sheet.find(
+                receiver_wallet, in_column=1).row
+            blockchain.send_coins(
+                sender_row_ID, receiver_row_ID, amount_to_send)
+            show_wallet_menu(row_ID)
+        else:
+            print("\nCannot find reciever wallet")
+            show_wallet_menu(row_ID)
     # elif (user_choice == 3):
         # Do this
     # elif (user_choice == 4):
         # Do this
-    # elif (user_choice == 5):
-        # Do this
+    elif (user_choice == "5"):
+        SystemExit(0)
     else:
         print("\nPlease enter one of the options")
         show_wallet_menu(row_ID)
