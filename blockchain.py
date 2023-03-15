@@ -29,6 +29,11 @@ def send_coins(sending_user, receiving_user, amount):
 
 
 def check_balance(row_ID):
+    """
+    A function to check the users wallet balance.
+    it takes in the row of the users details pulls
+    their data from the google sheet.
+    """
     wallet_user = gsheets.sheet.cell(row_ID, 1).value
     wallet_balance = gsheets.sheet.cell(row_ID, 3).value
     print("\nWelcome", wallet_user, "Your balance is:", wallet_balance)

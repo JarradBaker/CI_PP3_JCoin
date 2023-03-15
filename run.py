@@ -39,6 +39,11 @@ incorrect_attempts = 0
 
 
 def show_start_menu():
+    """
+    A function to show the start menu. This
+    shows the logo for the coin and then opens
+    the welcome menu.
+    """
     print(" _________     _______    ________    _______    _______   __ ")
     print("|___   ___|   |  _____|  |  ____  |  |__   __|  |   _   | |  |")
     print("    | |       | |        | |    | |     | |     |  | |  | |  |")
@@ -52,6 +57,11 @@ def show_start_menu():
 
 
 def show_welcome_menu(incorrect_attempts):
+    """
+    A function to show the welcome menu. This
+    takes input from the user allowing them to
+    select which operations to perform.
+    """
     print("Please select one of the options below:")
     print("1. Sign in to your wallet")
     print("2. Create a new wallet")
@@ -114,6 +124,11 @@ def show_welcome_menu(incorrect_attempts):
 
 
 def show_wallet_menu(row_ID):
+    """
+    A function to show the wallet menu. This
+    takes input from the user allowing them to
+    select which wallet operations to perform.
+    """
     blockchain.check_balance(row_ID)
     print("\nWhat would you like to do?")
     print("\n1. Check your balance")
