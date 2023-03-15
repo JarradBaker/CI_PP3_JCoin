@@ -69,44 +69,50 @@ def show_welcome_menu(incorrect_attempts):
     print("3. Exit the program")
     user_choice = input("Please enter 1, 2, or 3, and press enter: ")
 
-    if (user_choice == "1"):
-        print("Input your login details:")
-        input_user = input("Please enter your username: ")
-        input_pass = input("Please enter your password: ")
-        if (sheet.find(input_user)):
-            # gets the row number of the found username
-            # for checking the corresponding password
-            row_ID = sheet.find(input_user, in_column=1).row
-            # finds the corresponding password
-            found_pass = sheet.cell(row_ID, 2).value
-            print("Found wallet, checking password")
-            if (input_pass == found_pass):
-                print("Password Matches, logging in")
-                show_wallet_menu(row_ID)
-            else:
-                if (incorrect_attempts >= 2):
-                    print("\n Too many incorrect guesses, exiting \n")
-                    SystemExit(0)
+    try:
+        if (user_choice == "1"):
+            print("Input your login details:")
+            input_user = input("Please enter your username: ")
+            input_pass = input("Please enter your password: ")
+            if (sheet.find(input_user)):
+                # gets the row number of the found username
+                # for checking the corresponding password
+                row_ID = sheet.find(input_user, in_column=1).row
+                # finds the corresponding password
+                found_pass = sheet.cell(row_ID, 2).value
+                print("Found wallet, checking password")
+                if (input_pass == found_pass):
+                    print("Password Matches, logging in")
+                    show_wallet_menu(row_ID)
                 else:
-                    print("\n Incorrect password, try again \n")
-                    incorrect_attempts += 1
-                    show_welcome_menu(incorrect_attempts)
-        else:
-            print("User doesn't exist, please create a wallet")
+                    if (incorrect_attempts >= 2):
+                        print("\n Too many incorrect guesses, exiting \n")
+                        SystemExit(0)
+                    else:
+                        print("\n Incorrect password, try again \n")
+                        incorrect_attempts += 1
+                        show_welcome_menu(incorrect_attempts)
+            else:
+                print("User doesn't exist, please create a wallet")
 
-        # If user is in google sheet check column + 1 if password matches
-        # elif user isn't in google sheet, give error message
-    elif (user_choice == "2"):
-        new_user = input("Please choose a username: ")
-        new_pass = input("Please choose a password: ")
-        # Find the next available username cell, and enter the user
-        # plus enter the pass in the user column + 1
-    elif (user_choice == "3"):
-        # Do this
-        SystemExit(0)
-    else:
-        print("Please enter one of the options")
-        show_welcome_menu()
+            # If user is in google sheet check column + 1 if password matches
+            # elif user isn't in google sheet, give error message
+        elif (user_choice == "2"):
+            new_user = input("Please choose a username: ")
+            new_pass = input("Please choose a password: ")
+            # Find the next available username cell, and enter the user
+            # plus enter the pass in the user column + 1
+        elif (user_choice == "3"):
+            # Do this
+            SystemExit(0)
+        else:
+            if not user_choice:
+                raise ValueError('Empty String')
+            else:
+                raise ValueError('user choice not equal to a choice')
+    except ValueError as e:
+        print(e)
+        show_welcome_menu(incorrect_attempts)
 
 
 def show_wallet_menu(row_ID):
