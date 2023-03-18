@@ -1,4 +1,5 @@
 import gsheets
+import run
 
 
 def send_coins(sending_user, receiving_user, amount):
@@ -39,4 +40,23 @@ def check_balance(row_ID):
     print("\nWelcome", wallet_user, "Your balance is:", wallet_balance)
 
 
-# def mine_block()
+def delete_wallet(row_ID):
+    """
+    A function that deletes the users wallet by
+    taking the user's row_ID and deletes the
+    values in their wallet, password, and
+    amount cells.
+    """
+    gsheets.sheet.update_cell(row_ID, 1, "")
+    gsheets.sheet.update_cell(row_ID, 2, "")
+    gsheets.sheet.update_cell(row_ID, 3, "")
+
+
+def mine_block():
+    last_block = run.actual_blockchain[-1]
+    block = {
+        'previous_block_index': last_block[index],
+        'index': len(run.actual_blockchain),
+        'transactions': run.open_transactions
+    }
+    run.actual_blockchain.append(block)
