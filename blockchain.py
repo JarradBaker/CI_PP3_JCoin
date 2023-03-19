@@ -1,5 +1,11 @@
 import gsheets
-import run
+
+genesis_block = {
+    'index': 0,
+    'transactions': []
+}
+actual_blockchain = [genesis_block]
+open_transactions = []
 
 
 def send_coins(sending_user, receiving_user, amount):
@@ -53,10 +59,13 @@ def delete_wallet(row_ID):
 
 
 def mine_block():
-    last_block = run.actual_blockchain[-1]
+    """
+    A function that adds the open transactions
+    to a block and adds the block to the blockchain.
+    """
+    last_block = actual_blockchain[-1]
     block = {
-        'previous_block_index': last_block[index],
-        'index': len(run.actual_blockchain),
-        'transactions': run.open_transactions
+        'index': len(actual_blockchain),
+        'transactions': open_transactions
     }
-    run.actual_blockchain.append(block)
+    actual_blockchain.append(block)

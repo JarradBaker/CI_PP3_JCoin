@@ -5,47 +5,6 @@ row_ID = 0
 incorrect_attempts = 0
 
 
-genesis_block = {
-    'previous_block_index': '',
-    'index': 0,
-    'transactions': []
-}
-actual_blockchain = [genesis_block]
-open_transactions = []
-
-# READING FROM THE SPREADSHEET
-
-# Searching for a value in a cell in the specified column
-# and return the row number
-# cell = sheet.find("jarrad", in_column=1).row
-# print(cell)
-
-# ITERATE THROUGH GIVEN CELLS
-# for cell in sheet.range('A2:A6'):
-#     print(cell.value)
-
-# PRINT A GIVEN CELL
-# print(sheet.acell('A3').value)
-
-# PRINT A WHOLE GIVEN COLUMN
-# print(sheet.col_values(1))
-
-# PRINT A WHOLE GIVEN ROW
-# print(sheet.row_values(2))
-
-
-# WRITING TO THE SPREADSHEET
-
-# UPDATE A GIVEN CELL BY CALL VALUE
-# sheet.update_acell('A2', 'Connor')
-
-# UPDATE A GIVEN CELL BY CELL COORDINATES (row, col, value)
-# sheet.update_cell(3, 2, 10)
-
-# UPDATE A RANGE OF CELLS
-# sheet.update('A2:C2', [['alex', 'alex123', 10000]])
-
-
 def show_start_menu():
     """
     A function to show the start menu. This
@@ -74,13 +33,13 @@ def show_welcome_menu(incorrect_attempts):
     print("1. Sign in to your wallet")
     print("2. Create a new wallet")
     print("3. Exit the program")
-    user_choice = input("\nPlease enter 1, 2, or 3, and press enter: ")
+    user_choice = input("\nPlease enter 1, 2, or 3, and press enter: \n")
 
     try:
         if (user_choice == "1"):
-            print("\nInput your login details:")
-            input_user = input("Please enter your username: ")
-            input_pass = input("Please enter your password: ")
+            print("\nInput your login details: \n")
+            input_user = input("Please enter your username: \n")
+            input_pass = input("Please enter your password: \n")
             if (gsheets.sheet.find(input_user)):
                 # gets the row number of the found username
                 # for checking the corresponding password
@@ -105,8 +64,8 @@ def show_welcome_menu(incorrect_attempts):
             # If user is in google sheet check column + 1 if password matches
             # elif user isn't in google sheet, give error message
         elif (user_choice == "2"):
-            new_user = input("Please choose a username: ")
-            new_pass = input("Please choose a password: ")
+            new_user = input("Please choose a username: \n")
+            new_pass = input("Please choose a password: \n")
             if gsheets.sheet.find(new_user):
                 print("\nUser already exists. Please log in")
                 show_welcome_menu(incorrect_attempts)
@@ -144,7 +103,7 @@ def show_wallet_menu(row_ID):
     print("3. Mine a block")
     print("4. Delete your wallet")
     print("5. Exit the program")
-    user_choice = input("\nPlease enter 1, 2, 3, 4, or 5 and press enter: ")
+    user_choice = input("\nPlease enter 1, 2, 3, 4, or 5 and press enter: \n")
 
     try:
         if (user_choice == "1"):
@@ -152,8 +111,9 @@ def show_wallet_menu(row_ID):
             show_wallet_menu(row_ID)
         elif (user_choice == "2"):
             sender_row_ID = row_ID
-            receiver_wallet = input("\nPlease choose a user to send to: ")
-            amount_to_send = int(input("\nPlease choose an amount of coins: "))
+            receiver_wallet = input("\nPlease choose a user to send to: \n")
+            amount_to_send = int(
+                input("\nPlease choose an amount of coins:\n"))
             # Check if receiver_wallet is null
             if (gsheets.sheet.find(receiver_wallet)):
                 receiver_row_ID = gsheets.sheet.find(
@@ -174,20 +134,20 @@ def show_wallet_menu(row_ID):
                     'receiver': receiver_wallet,
                     'amount': amount_to_send
                 }
-                open_transactions.append(transaction)
+                blockchain.open_transactions.append(transaction)
                 show_wallet_menu(row_ID)
             else:
                 print("\nCannot find reciever wallet")
                 show_wallet_menu(row_ID)
         elif (user_choice == "3"):
             print("\nBelow are the open transactions")
-            print(open_transactions)
+            print(blockchain.open_transactions)
             print("\nBelow is the blockchain")
-            print(actual_blockchain)
+            print(blockchain.actual_blockchain)
             blockchain.mine_block()
             show_wallet_menu(row_ID)
         elif (user_choice == "4"):
-            confirm_choice = input("\nAre you sure? Type y or n: ").lower()
+            confirm_choice = input("\nAre you sure? Type y or n: \n").lower()
             try:
                 if (confirm_choice == "y"):
                     blockchain.delete_wallet(row_ID)
