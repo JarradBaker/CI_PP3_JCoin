@@ -76,8 +76,8 @@
 ## Technical Design
 ### Flowchart
 <details><summary>Header</Summary>
-<img src="docs/flowchart1.jpg">  
-<img src="docs/flowchart2.jpg">  
+<img src="Docs/flowchart1.jpg">  
+<img src="Docs/flowchart2.jpg">  
 </details>
 
 
