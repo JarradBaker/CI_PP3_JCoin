@@ -1,9 +1,9 @@
 # JCoin
 (Developer: Jarrad Baker)
 
-![Mockup image](docs/responsive.png)
+![Mockup image](Docs/main.png)
 
-[Live webpage](https://jarradbaker.github.io/CI_PP1_SkateShack/)
+[Live webpage](https://jcoin.herokuapp.com/)
 
 ## Table Of Contents
 
@@ -75,6 +75,10 @@
 
 ## Technical Design
 ### Flowchart
+<details><summary>Header</Summary>
+<img src="docs/flowchart1.jpg">  
+<img src="docs/flowchart2.jpg">  
+</details>
 
 
 ## Technologies Used
@@ -97,9 +101,7 @@ The app contains various features, as highlighted below:
 - The first menu that shows the name/logo for the project
 - It then loads the welcome menu
 - User Stories: 9
-<details><summary>Header</Summary>
-<img src="docs/features/Header.png">  
-</details>
+
 
 ### Sign in
 - The second menu that loads, and prompts users to log in, exit, or create a wallet.
