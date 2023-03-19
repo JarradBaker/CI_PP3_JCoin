@@ -1,4 +1,4 @@
-# Skate Shack
+# JCoin
 (Developer: Jarrad Baker)
 
 ![Mockup image](docs/responsive.png)
@@ -248,6 +248,20 @@ The app contains various features, as highlighted below:
 | Circular import error | Moved the variables into correct files |
 
 ## Deployment
+
+### Heroku
+
+1. Create an account at heroku.com
+2. Create a new app, add app name and your region
+3. Click on create app
+4. Go to "Settings"
+5. Under Config Vars, add your sensitive data (creds.json for example)
+6. Go to "Deploy" and at "Deployment method", click on "Connect to Github"
+7. Enter your repository name and click on it when it shows below
+8. Choose the branch you want to buid your app from
+9. If desired, click on "Enable Automatic Deploys", which keeps the app up to date with your Github repository
+
+### Github
 
 The website was deployed through the use of GitHub Pages, a feature built in to GitHub. This can be done by following the steps below.
 1. In the desired repository, click on "Settings" from the top menu.
