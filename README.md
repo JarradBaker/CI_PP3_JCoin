@@ -1,108 +1,296 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Skate Shack
+(Developer: Jarrad Baker)
 
-Welcome JarradBaker,
+![Mockup image](docs/responsive.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[Live webpage](https://jarradbaker.github.io/CI_PP1_SkateShack/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Table Of Contents
 
-## Gitpod Reminders
+1. [Project Goals](#project-goals)
+  1. [User Goals](#user-goals)
+  2. [Website Owner Goals](#website-owner-goals)
+2. [User Experience](#user-experience)
+    1. [Target Audience](#target-audience)
+    2. [User Requrements and Expectations](#user-requirements-and-expectations)
+    3. [User Stories](#user-stories)
+3. [Design](#design)
+    1. [Design Choices](#design-choices)
+    2. [Colour](#colour)
+    3. [Fonts](#fonts)
+    4. [Structure](#structure)
+    5. [Wireframes](#wireframes)
+4. [Technologies Used](#technologies-used)
+    1. [Languages](#languages)
+    2. [Frameworks and Tools](#frameworks-and-tools)
+5. [Features](#features)
+6. [Testing](#validation)
+    1. [HTML Validation](#HTML-validation)
+    2. [CSS Validation](#CSS-validation)
+    3. [Accessibility](#accessibility)
+    4. [Performance](#performance)
+    5. [Device testing](#performing-tests-on-various-devices)
+    6. [Browser compatibility](#browser-compatability)
+    7. [Testing user stories](#testing-user-stories)
+8. [Bugs](#Bugs)
+9. [Deployment](#deployment)
+10. [Credits](#credits)
+11. [Acknowledgements](#acknowledgements)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Project Goals
 
-`python3 -m http.server`
+### User Goals
+- Create wallets
+- Send coins to other users
+- Delete wallets
+- Mine blocks
 
-A blue button should appear to click: _Make Public_,
+### Site Owner Goals
+- Reach the target audience
+- Allow users to use all functionality of the blockchain
 
-Another blue button should appear to click: _Open Browser_.
+## User Experience
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Target Audience
+- People interested in cryptocurrencies and blockchain technology
+- people interested in the future of finance
+- people who want a simple way to introduce this technology to others 
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+### User Requirements and Expectations
+- Easy to use, simplistic user interface
+- easy to set up and use
+- ability to create wallets
+- ability to delete wallets
+- ability to send coins
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### User Stories
 
-To log into the Heroku toolbelt CLI:
+#### User
+1. As a user, I want to be able to create a wallet
+2. As a user, I want to be able to easily navigate the application
+3. As a user, I want to be able to send coins to another wallet
+4. As a user, I want to be able to delete my wallet
+5. As a user, I want to be able to mine blocks
+6. As a user, I want to be able to exit the program
+7. As a user, I want to be able to sign in to my wallet
+8. As a user, I want to be able to see my balance
+9. As a user, I want to be able to know what the project is
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### Site Owner
+10. As a site owner, I want users to be able to send coins
+11. As a site owner, I want users to be able tocreate, delete, and login to wallets
+12. As a site owner, I want the users to be able to navigate the app easily
+13. As a site owner, I want the google sheet to be able to store all of the users data
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Technical Design
+### Flowchart
 
-------
 
-## Release History
+## Technologies Used
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Languages
+The following languages were used to develop the app:
+- Python
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Frameworks and Tools
+The following frameworks and tools were used to develop the website:
+- Git
+- Github
+- Gitpod
+- Google Sheets and Drive
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Features
+The app contains various features, as highlighted below:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Welcome Menu
+- The first menu that shows the name/logo for the project
+- It then loads the welcome menu
+- User Stories: 9
+<details><summary>Header</Summary>
+<img src="docs/features/Header.png">  
+</details>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Sign in
+- The second menu that loads, and prompts users to log in, exit, or create a wallet.
+- User Stories: 1, 2, 6, 7, 11
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Create Wallet
+- This allows users to create new wallets, and gives them some coins.
+- User stories covered: 1, 11
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Exit
+- This allows the user to exit the application.
+- User stories covered: 6
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Wallet Menu
+- This shows the wallet menu, allowing the users to choose if they want to check their balance, send coins to another user, mine a block, delete their wallet, or exit.
+- User stories covered: 2, 3, 4, 5, 8
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Check balance
+- This allows the user to check their balance.
+- User stories covered: 8
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Send Coins to another user
+- This allows the user to send coins to another user, as long as they have enough balance.
+- User stories covered: 3, 10
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+### Mine a block
+- This allows the user to mine a block which adds the open transactions to the blockchain.
+- User stories covered: 5
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+### Delete Wallet
+- This allows the user to delete their wallet, which removes their name, password, and coins from the google sheet.
+- User stories covered: 4, 11
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+## Testing
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Testing User Stories
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+1. As a user, I want to be able to create a wallet
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Welcome Menu | Start the application | Shows both menus | Works as expected |
+| Create Wallet | Select create wallet from welcome menu | takes input to create a username and password | Works as expected |
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+2. As a user, I want to be able to easily navigate the application
 
-**Can I opt out?**
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Welcome Menu | Start the application | Shows both menus | Works as expected |
+| Sign in | Select sign in from welcome menu | takes input to check credentials against gsheets | Works as expected |
+| Wallet Menu | Sign in from the welcome menu | Shows wallet menu | Works as expected |
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+3. As a user, I want to be able to send coins to another wallet
 
-**Anything more?**
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Wallet Menu | Sign in from the welcome menu | Shows wallet menu | Works as expected |
+| Send coins to another user | select send coins from wallet menu | takes input for the targets name, and the desired amount, then removes amount from senders balance, and adds it to targets balance | Works as expected |
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+4. As a user, I want to be able to delete my wallet
 
-Happy coding!
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Wallet Menu | Sign in from the welcome menu | Shows wallet menu | Works as expected |
+| Delete Wallet | Select delete wallet from welcome menu | prompts for confirmation, then deletes data from users cells | Works as expected |
+
+
+5. As a user, I want to be able to mine blocks
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Wallet Menu | Sign in from the welcome menu | Shows wallet menu | Works as expected |
+| Mine a block | Select mine block from wallet menu | adds open transactions to a block, and adds that block to the blockchain | Works as expected |
+
+6. As a user, I want to be able to exit the program
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Welcome Menu | Start the application | Shows both menus | Works as expected |
+| Exit | Select exit from welcome menu | exits application| Works as expected |
+
+
+7. As a user, I want to be able to sign in to my wallet
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Welcome Menu | Start the application | Shows both menus | Works as expected |
+| Sign in | Select sign in from welcome menu | takes input to check credentials against gsheets | Works as expected |
+
+
+8. As a user, I want to be able to see my balance
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Wallet Menu | Sign in from the welcome menu | Shows wallet menu | Works as expected |
+| Check balance | Select check balance from wallet menu | pulls the users balance from gsheets and displays it | Works as expected |
+
+
+9. As a user, I want to be able to know what the project is
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Start Menu | Start application | Shows start menu | Works as expected |
+
+
+10. As a site owner, I want users to be able to send coins
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Send coins to another user | select send coins from wallet menu | takes input for the targets name, and the desired amount, then removes amount from senders balance, and adds it to targets balance | Works as expected |
+
+
+11. As a site owner, I want users to be able to create, delete, and login to wallets
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Sign in | Select sign in from welcome menu | takes input to check credentials against gsheets | Works as expected |
+| Create Wallet | Select create wallet from welcome menu | takes input to create a username and password | Works as expected |
+| Delete Wallet | Select delete wallet from welcome menu | prompts for confirmation, then deletes data from users cells | Works as expected |
+
+
+12. As a site owner, I want the users to be able to navigate the app easily
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Welcome Menu | Start the application | Shows both menus | Works as expected |
+| Wallet Menu | Sign in from the welcome menu | Shows wallet menu | Works as expected |
+
+
+
+## Bugs
+
+| **Bug** | **Fix** |
+|---------|---------|
+| App wasn't connecting to Gspread | Recreated keys, everything resolved |
+| Circular import error | Moved the variables into correct files |
+
+## Deployment
+
+The website was deployed through the use of GitHub Pages, a feature built in to GitHub. This can be done by following the steps below.
+1. In the desired repository, click on "Settings" from the top menu.
+2. From the side menu to your left, select "Pages" in the "Code and automation" section.
+3. Make sure the "Source" option is set to "Deploy from a branch"
+4. Select the desired "Branch" from the drop down below (main branch in most cases, making sure the director is set to /(root)).
+5. Select "Save", and after it refreshes the page, you will see a box at the top of the page providing you with the URL of your now published site.
+
+You can fork my, or any other repository by doing the following.
+1. Go to the desired repository
+2. Click "Fork" in the upper right corner
+3. Select the owner, and set the repository name. A description can be added if desired
+4. Choose whether to copy the default branch, or all branches
+5. Click "Create Form"
+
+You can clone a repository by following the steps below.
+1. Go to the desired repository
+2. Click the "Code" button at the top of the files section of the page
+3. Select your desired method for cloning (HTTPS/SSH/GitHub CLI)
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory
+6. Type "git clone", and then paste the URL you copied earlier. It will look like this, with your GitHub username instead of "YOUR-USERNAME": "$ git clone https://github.com/YOUR-USERNAME/DESIRED-REPOSITORY"
+7. Press Enter. Your local clone will be created.
+
+## Credits
+
+### Code
+
+
+## Acknowledgements
+
+I would like to take this opportunity to acknowledge and thank the following people:
+- My mentor Mo Shami for continuous guidance and support.
+- My mother, who always encouraged me to strive for a career that I enjoy.
+- My peers on the Code Institute Slack channels, for advice and feedback.
+- My partener Kirsty, for her belief in me, supporting me, encouraging me, and giving me the invaluable time needed to develop my skills
