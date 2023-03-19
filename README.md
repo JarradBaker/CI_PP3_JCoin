@@ -144,6 +144,9 @@ The app contains various features, as highlighted below:
 
 ## Testing
 
+### PEP8 validation
+-Tested all .py files, which showed 0 errors and 0 warnings
+
 ### Testing User Stories
 
 1. As a user, I want to be able to create a wallet
