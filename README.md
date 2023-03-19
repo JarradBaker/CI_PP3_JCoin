@@ -14,24 +14,15 @@
     1. [Target Audience](#target-audience)
     2. [User Requrements and Expectations](#user-requirements-and-expectations)
     3. [User Stories](#user-stories)
-3. [Design](#design)
-    1. [Design Choices](#design-choices)
-    2. [Colour](#colour)
-    3. [Fonts](#fonts)
-    4. [Structure](#structure)
-    5. [Wireframes](#wireframes)
+3. [Technical Design](#technical-design)
+    1. [Flowchart](#flowchart)
 4. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
     2. [Frameworks and Tools](#frameworks-and-tools)
 5. [Features](#features)
 6. [Testing](#validation)
-    1. [HTML Validation](#HTML-validation)
-    2. [CSS Validation](#CSS-validation)
-    3. [Accessibility](#accessibility)
-    4. [Performance](#performance)
-    5. [Device testing](#performing-tests-on-various-devices)
-    6. [Browser compatibility](#browser-compatability)
-    7. [Testing user stories](#testing-user-stories)
+    1. [PEP8 Validation](#pep8-validation)
+    2. [Testing user stories](#testing-user-stories)
 8. [Bugs](#Bugs)
 9. [Deployment](#deployment)
 10. [Credits](#credits)
@@ -81,7 +72,6 @@
 10. As a site owner, I want users to be able to send coins
 11. As a site owner, I want users to be able tocreate, delete, and login to wallets
 12. As a site owner, I want the users to be able to navigate the app easily
-13. As a site owner, I want the google sheet to be able to store all of the users data
 
 ## Technical Design
 ### Flowchart
@@ -284,7 +274,9 @@ You can clone a repository by following the steps below.
 
 ## Credits
 
-### Code
+### Google
+- Google Sheets
+- Google Drive
 
 
 ## Acknowledgements
